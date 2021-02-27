@@ -13,13 +13,15 @@ You'll need [Node.js](https://nodejs.org/) and [Yarn](https://classic.yarnpkg.co
 Set the following environment variables in [`.env`](.env) and in your production environment:
 
 ```sh
-GIPHY_API_KEY
-GIPHY_TAG
-GIPHY_RATING
-GIPHY_RENDITION
+GIPHY_API_KEY # Get a key from the GIPHY Developer Portal.
+GIPHY_TAG # Default: success
+GIPHY_RATING # Default: pg
+GIPHY_RENDITION # Default: original
 ```
 
-Defaults are set for all but the [API Key](https://support.giphy.com/hc/en-us/articles/360020283431-Request-A-GIPHY-API-Key). See the [GIPHY API documentation](https://developers.giphy.com/docs/api/endpoint#random) for more info. All variables can be overwritten in the URL query string parameters (e.g. append `?tag=cat` to the URL to request a random GIF tagged with a cat).
+Defaults are set for all but the [API Key](https://support.giphy.com/hc/en-us/articles/360020283431-Request-A-GIPHY-API-Key). See the [GIPHY API documentation](https://developers.giphy.com/docs/api/endpoint#random) for more info on request parameters.
+
+All variables can be overridden in the URL query string parameters (e.g. append `?tag=cat` to the URL to request a random GIF tagged with a cat). A [`rendition` parameter](https://developers.giphy.com/docs/optional-settings/#rendition-guide) is available to request a specific GIF size.
 
 ### [📜 Scripts](package.json)
 
