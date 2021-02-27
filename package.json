@@ -1,16 +1,117 @@
 {
-  "name": "api-routes-cors",
-  "version": "1.0.0",
-  "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start"
-  },
-  "dependencies": {
-    "cors": "2.8.5",
-    "next": "latest",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
-  },
-  "license": "MIT"
+    "name": "get-random-gif",
+    "description": "Redirect to a random GIF on GIPHY",
+    "keywords": [
+        "GIF",
+        "GIPHY"
+    ],
+    "author": "Grant Burry <grant@burry.me> (https://grantburry.com)",
+    "homepage": "https://gif.burry.dev",
+    "repository": "github:Burry/Get-Random-GIF",
+    "license": "MIT",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "type-check": "tsc --pretty --noEmit",
+        "format": "prettier --write .",
+        "lint": "eslint . --ext ts --ext tsx --ext js",
+        "lint:all": "yarn lint && yarn type-check"
+    },
+    "babel": {
+        "presets": [
+            "next/babel"
+        ]
+    },
+    "eslintConfig": {
+        "parser": "@typescript-eslint/parser",
+        "plugins": [
+            "@typescript-eslint"
+        ],
+        "extends": [
+            "eslint:recommended",
+            "plugin:react/recommended",
+            "plugin:@typescript-eslint/recommended",
+            "prettier"
+        ],
+        "env": {
+            "es6": true,
+            "browser": true,
+            "jest": true,
+            "node": true
+        },
+        "settings": {
+            "react": {
+                "version": "detect"
+            }
+        },
+        "rules": {
+            "react/react-in-jsx-scope": 0,
+            "react/display-name": 0,
+            "react/prop-types": 0,
+            "@typescript-eslint/explicit-function-return-type": 0,
+            "@typescript-eslint/explicit-member-accessibility": 0,
+            "@typescript-eslint/indent": 0,
+            "@typescript-eslint/member-delimiter-style": 0,
+            "@typescript-eslint/no-explicit-any": 0,
+            "@typescript-eslint/no-var-requires": 0,
+            "@typescript-eslint/no-use-before-define": 0,
+            "@typescript-eslint/no-unused-vars": [
+                2,
+                {
+                    "argsIgnorePattern": "^_"
+                }
+            ],
+            "no-console": [
+                2,
+                {
+                    "allow": [
+                        "warn",
+                        "error"
+                    ]
+                }
+            ]
+        }
+    },
+    "prettier": {
+        "semi": false,
+        "singleQuote": true,
+        "tabWidth": 4,
+        "trailingComma": "none",
+        "arrowParens": "avoid"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged",
+            "pre-push": "yarn run type-check"
+        }
+    },
+    "lint-staged": {
+        "*.@(ts|tsx)": [
+            "eslint --ext ts --ext tsx --ext js",
+            "yarn type-check",
+            "prettier --write"
+        ]
+    },
+    "dependencies": {
+        "next": "latest",
+        "normalize.css": "^8.0.1",
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1"
+    },
+    "devDependencies": {
+        "@types/node": "^14.14.31",
+        "@types/react": "^17.0.2",
+        "@typescript-eslint/eslint-plugin": "^4.15.2",
+        "@typescript-eslint/parser": "^4.15.2",
+        "eslint": "^7.20.0",
+        "eslint-config-prettier": "^8.1.0",
+        "eslint-plugin-react": "^7.22.0",
+        "husky": "^5.1.1",
+        "lint-staged": "^10.5.4",
+        "prettier": "^2.2.1",
+        "typescript": "^4.2.2"
+    }
 }

@@ -1,23 +1,44 @@
-# API Routes Example with CORS
+# 🔀 Get Random GIF
 
-Next.js ships with [API routes](https://nextjs.org/docs/api-routes/introduction) which provides an easy solution to build your own `API`.
+**Redirect to a random GIF on GIPHY.** Supports all request parameters from the [GIPHY API Random Endpoint](https://developers.giphy.com/docs/api/endpoint#random) as well as an additional [`rendition` parameter](https://developers.giphy.com/docs/optional-settings/#rendition-guide).
 
-This example shows how to create an `API` endpoint with [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) headers, using the [cors](https://github.com/expressjs/cors) package.
+[![Random GIF](https://gif.burry.dev)](https://gif.burry.dev)
 
-## Deploy your own
+## 🛠 Development
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+You'll need [Node.js](https://nodejs.org/) and [Yarn](https://classic.yarnpkg.com/en/docs/install) installed in your local development environment. Run `yarn` inside the repository root to install dependencies before proceeding.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/api-routes-cors&project-name=api-routes-cors&repository-name=api-routes-cors)
+### ⚙️ Environment Variables
 
-## How to use
+Set the following environment variables in [`.env`](.env) and in your production environment:
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
-```bash
-npx create-next-app --example api-routes-cors api-routes-cors-app
-# or
-yarn create next-app --example api-routes-cors api-routes-cors-app
+```sh
+GIPHY_API_KEY
+GIPHY_TAG
+GIPHY_RATING
+GIPHY_RENDITION
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+Defaults are set for all but the [API Key](https://support.giphy.com/hc/en-us/articles/360020283431-Request-A-GIPHY-API-Key). See the [GIPHY API documentation](https://developers.giphy.com/docs/api/endpoint#random) for more info. All variables can be overwritten in the URL query string parameters (e.g. append `?tag=cat` to the URL to request a random GIF tagged with a cat).
+
+### [📜 Scripts](package.json)
+
+#### `yarn dev`
+
+Runs the development server. Changes will automatically refresh the page.
+
+#### `yarn build`
+
+Builds the app for production.
+
+#### `yarn start`
+
+Starts the production server.
+
+## 📦 Deploy Your Own
+
+Deploy using [Vercel](https://vercel.com):
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/Burry/Get-Random-GIF/tree/main/&project-name=get-random-gif&repository-name=get-random-gif)
+
+[Documentation](https://nextjs.org/docs/deployment)
