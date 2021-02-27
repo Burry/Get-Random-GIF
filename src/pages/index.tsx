@@ -52,9 +52,9 @@ export const getServerSideProps: GetServerSideProps = async ({
         // Build request
         const endpoint = 'http://api.giphy.com/v1/gifs/random'
         const params = {
-            api_key: process.env.GIPHY_API_KEY,
+            api_key: apiKey,
             tag: process.env.GIPHY_TAG ?? 'success',
-            rating: process.env.GIPHY_RATING ?? 'g',
+            rating: process.env.GIPHY_RATING ?? 'pg',
             ...customParams
         }
         const requestUrl = `${endpoint}?${new URLSearchParams(
